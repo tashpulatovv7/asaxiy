@@ -54,7 +54,7 @@ const Home = () => {
 	}, [searchTerm, sortBy, sortOrder, products]);
 
 	return (
-		<main>
+		<main id='home'>
 			<div className='filters'>
 				<select onChange={e => setSortBy(e.target.value)} value={sortBy}>
 					<option value=''>Saralash</option>
