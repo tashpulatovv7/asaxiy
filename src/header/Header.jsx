@@ -1,6 +1,12 @@
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
+
+import AuthModal from '../loginModal/LoginModal';
 import './header.css';
 
 const Header = () => {
+	const [showModal, setShowModal] = useState(false);
+
 	return (
 		<header>
 			<h1>asaxiy</h1>
@@ -51,12 +57,9 @@ const Header = () => {
 				/>
 				<p>Russian</p>
 			</div>
-			<div>
-				<img
-					src='https://asaxiy.uz/custom-assets/images/icons/header/avatar.svg'
-					alt=''
-				/>
-				<p>Kirish</p>
+			<div className='d-flex justify-content-center align-items-center '>
+				<Button onClick={() => setShowModal(true)}>Kirish</Button>
+				<AuthModal show={showModal} handleClose={() => setShowModal(false)} />
 			</div>
 		</header>
 	);

@@ -2,6 +2,7 @@ import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import IndividualIntervalsExample from '../carousel/Carousel';
 import './home.css';
 
 const Home = () => {
@@ -63,6 +64,7 @@ const Home = () => {
 					<option value='rating'>Rating bo'yicha</option>
 				</select>
 			</div>
+			<IndividualIntervalsExample />
 			<ul className='cards'>
 				{filteredProducts.length > 0 ? (
 					filteredProducts.map(product => (
