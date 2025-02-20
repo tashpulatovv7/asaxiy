@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
 import AuthModal from '../loginModal/LoginModal';
@@ -65,4 +65,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default memo(Header);

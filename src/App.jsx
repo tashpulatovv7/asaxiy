@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Detail from './detail/Detail';
 import Footer from './footer/Footer';
@@ -18,4 +19,4 @@ const App = () => {
 	);
 };
 
-export default App;
+export default memo(App);

@@ -1,6 +1,6 @@
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import IndividualIntervalsExample from '../carousel/Carousel';
 import './home.css';
@@ -101,4 +101,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default memo(Home);

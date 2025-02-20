@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './carousel.css';
 
@@ -57,4 +58,4 @@ function IndividualIntervalsExample() {
 	);
 }
 
-export default IndividualIntervalsExample;
+export default memo(IndividualIntervalsExample);

@@ -1,6 +1,6 @@
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './detail.css';
 
@@ -49,4 +49,4 @@ const Details = () => {
 	);
 };
 
-export default Details;
+export default memo(Details);

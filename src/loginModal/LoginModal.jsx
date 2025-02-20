@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 import './LoginModal.css';
 
@@ -59,4 +59,4 @@ const AuthModal = ({ show, handleClose }) => {
 	);
 };
 
-export default AuthModal;
+export default memo(AuthModal);
