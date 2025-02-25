@@ -1,6 +1,7 @@
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { memo, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import IndividualIntervalsExample from '../carousel/Carousel';
 import { useStateValue } from '../context';
@@ -13,6 +14,8 @@ const Home = () => {
 	const [sortBy, setSortBy] = useState('');
 	const [sortOrder, setSortOrder] = useState('');
 	const { setWishlist, wishlist } = useStateValue();
+	const { basket, setBasket } = useStateValue();
+	const { t, i18n } = useTranslation();
 
 	useEffect(() => {
 		axios.get('https://dummyjson.com/products')
@@ -56,16 +59,6 @@ const Home = () => {
 		setFilteredProducts(updatedProducts);
 	}, [searchTerm, sortBy, sortOrder, products]);
 
-	// const addWishlist = product => {
-	// 	const isSomeWishlist = wishlist.some(item => item.id === product.id);
-
-	// 	if (isSomeWishlist) {
-	// 		setWishlist(wishlist.filter(item => item.id !== product.id));
-	// 	} else {
-	// 		setWishlist(prev => [...prev, product]);
-	// 	}
-	// };
-
 	const addWishlist = product => {
 		const isSome = wishlist.some(item => item.id === product.id);
 
@@ -76,14 +69,24 @@ const Home = () => {
 		}
 	};
 
+	const addBasket = product => {
+		const isSome = basket.some(item => item.id === product.id);
+
+		if (isSome) {
+			setBasket(basket.filter(item => item.id !== product.id));
+		} else {
+			setBasket([...basket, product]);
+		}
+	};
+
 	return (
 		<main id='home'>
 			<div className='filters'>
 				<select onChange={e => setSortBy(e.target.value)} value={sortBy}>
-					<option value=''>Saralash</option>
-					<option value='name'>Nomi bo'yicha</option>
-					<option value='price'>Narx bo'yicha</option>
-					<option value='rating'>Rating bo'yicha</option>
+					<option value=''>{t('saralash')}</option>
+					<option value='name'>{t('nomiBoyicha')}</option>
+					<option value='price'>{t('narxiBoyicha')}</option>
+					<option value='rating'>{t('ratingBoyicha')}</option>
 				</select>
 			</div>
 			<IndividualIntervalsExample />
@@ -136,7 +139,13 @@ const Home = () => {
 										Hoziroq harid qilish
 									</Link>
 
-									<button className='karzina'>
+									<button
+										className='karzina'
+										onClick={e => {
+											e.stopPropagation();
+											addBasket(product);
+										}}
+									>
 										<img
 											src='https://asaxiy.uz/custom-assets/images/icons/cart-single.svg'
 											alt=''

@@ -9,13 +9,15 @@ const Provider = ({ children }) => {
 	// 	sessionStorage.setItem('count', JSON.stringify(count));
 	// }, [count]);
 
-	const [wishlist, setWishlist] = useState([]);
+	const [wishlist, setWishlist, basket, setBasket] = useState([]);
 
 	return (
 		<Context.Provider
 			value={{
 				wishlist,
 				setWishlist,
+				basket,
+				setBasket,
 			}}
 		>
 			{children}

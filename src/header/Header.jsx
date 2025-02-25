@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import { Button } from 'react-bootstrap';
 
+import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { useStateValue } from '../context';
 import AuthModal from '../loginModal/LoginModal';
@@ -9,15 +10,17 @@ import './header.css';
 const Header = () => {
 	const [showModal, setShowModal] = useState(false);
 
-	const { wishlist } = useStateValue();
+	const { wishlist, basket } = useStateValue();
+
+	const { t, i18n } = useTranslation();
 
 	return (
 		<header>
 			<h1>asaxiy</h1>
-			<button className='header-btn'>Bo'limlar</button>
+			<button className='header-btn'>{t('bolimlar')}</button>
 			<form>
-				<input type='text' placeholder='Qidirish...' />
-				<button>Qidirish</button>
+				<input type='text' placeholder="t('qidirish')}" />
+				<button>{t('qidirish')}</button>
 			</form>
 			<NavLink>
 				<div>
@@ -25,7 +28,7 @@ const Header = () => {
 						src='https://asaxiy.uz/custom-assets/images/icons/header/compare_header.svg'
 						alt=''
 					/>
-					<p>Taqqoslash</p>
+					<p>{t('taqqos')}</p>
 				</div>
 			</NavLink>
 
@@ -35,7 +38,7 @@ const Header = () => {
 						src='https://asaxiy.uz/custom-assets/images/icons/header/payment.svg'
 						alt=''
 					/>
-					<p>To'lov</p>
+					<p>{t('tolash')}</p>
 				</div>
 			</NavLink>
 
@@ -45,17 +48,18 @@ const Header = () => {
 						src='https://asaxiy.uz/custom-assets/images/icons/header/tracker.svg'
 						alt=''
 					/>
-					<p>Trek</p>
+					<p>{t('trek')}</p>
 				</div>
 			</NavLink>
 
-			<NavLink>
+			<NavLink to={'/basket'}>
 				<div>
 					<img
 						src='https://asaxiy.uz/custom-assets/images/icons/header/cart.svg'
 						alt=''
 					/>
-					<p>Savatcha</p>
+					<p>{t('savat')}</p>
+					{/* <div className='basketCounter'>{basket.length}</div> */}
 				</div>
 			</NavLink>
 
@@ -65,23 +69,27 @@ const Header = () => {
 						src='https://asaxiy.uz/custom-assets/images/icons/header/heart.svg'
 						alt=''
 					/>
-					<p>Sevimlilar</p>
+					<p>{t('wish')}</p>
 					<div className='wishlistCounter'>{wishlist.length}</div>
 				</div>
 			</NavLink>
 
 			<NavLink>
-				<div>
+				<div
+					onClick={() => {
+						i18n.changeLanguage('ru');
+					}}
+				>
 					<img
 						src='https://asaxiy.uz/custom-assets/images/icons/header/language-ru.svg'
 						alt=''
 					/>
-					<p>Russian</p>
+					<p>{t('til')}</p>
 				</div>
 			</NavLink>
 
 			<div className='d-flex justify-content-center align-items-center '>
-				<Button onClick={() => setShowModal(true)}>Kirish</Button>
+				<Button onClick={() => setShowModal(true)}>{t('kirish')}</Button>
 				<AuthModal show={showModal} handleClose={() => setShowModal(false)} />
 			</div>
 			<h6 className='karzina-counter'>0</h6>

@@ -1,48 +1,51 @@
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import './footer.css';
 
 const Footer = () => {
+	const { t, i18n } = useTranslation();
+
 	return (
 		<footer>
 			<div>
-				<b>Ma'lumot</b>
-				<p>Ko'p so'raladigan savollar</p>
-				<p>Yangiliklar</p>
-				<p>Blog</p>
-				<p>Bizning brendimiz</p>
-				<p>Asaxiydagi karyerasi</p>
-				<p>Muddatli to'lov ofertasi</p>
-				<p>Ommaviy oferta</p>
-				<p>Bi haqimizda</p>
-				<p>Sayt xaritasi</p>
+				<b>{t('malumot')}</b>
+				<p>{t('malumot1')}</p>
+				<p>{t('malumot2')}</p>
+				<p>{t('malumot3')}</p>
+				<p>{t('malumot4')}</p>
+				<p>{t('malumot5')}</p>
+				<p>{t('malumot6')}</p>
+				<p>{t('malumot7')}</p>
+				<p>{t('malumot8')}</p>
+				<p>{t('malumot9')}</p>
 			</div>
 
 			<div>
 				<div>
-					<b>Biz bilan aloqa</b>
+					<b>{t('aloqa')}</b>
 					<p>+998 71 200 01 05</p>
-					<p>info@asaxiy.uz</p>
-					<p>Telegram bot</p>
-					<p>Chilonzor ko'chasi, 45/2, Toshkent</p>
+					<p>{t('aloqa1')}</p>
+					<p>{t('aloqa2')}</p>
+					<p>{t('aloqa3')}</p>
 				</div>
 
 				<div>
-					<b>Sodiqlik dasturlari</b>
-					<p>"El-yurt ishonchi" statusi</p>
-					<p>«Asaxiy Plus»</p>
-					<p>«Asaxiy Plus» ofertasi</p>
+					<b>{t('sodiqlik')}</b>
+					<p>{t('sodiqlik1')}</p>
+					<p>{t('sodiqlik2')}</p>
+					<p>{t('sodiqlik3')}</p>
 				</div>
 			</div>
 
 			<div>
-				<b>Yetkazib berish va do'konlar</b>
+				<b>{t('yetkazish')}</b>
 				<div className='yetkazib-berish'>
 					<img
 						className='yetkazib-berish-img'
 						src='https://asaxiy.uz/custom-assets/images/icons/store.svg'
 						alt=''
 					/>
-					<h4>Bizning do'konlar</h4>
+					<h4>{t('yetkazish1')}</h4>
 				</div>
 
 				<div className='yetkazib-berish'>
@@ -51,7 +54,7 @@ const Footer = () => {
 						src='https://asaxiy.uz/custom-assets/images/icons/delivery-point.svg'
 						alt=''
 					/>
-					<h4>Olib ketish punktlari</h4>
+					<h4>{t('yetkazish2')}</h4>
 				</div>
 
 				<div className='yetkazib-berish'>
@@ -60,12 +63,12 @@ const Footer = () => {
 						src='https://asaxiy.uz/custom-assets/images/icons/delivery-footer.svg'
 						alt=''
 					/>
-					<h4>Yetkazib berish</h4>
+					<h4>{t('yetkazish3')}</h4>
 				</div>
 			</div>
 
 			<div className='links'>
-				<b>To'lov turlari</b>
+				<b>{t('tolovTuri')}</b>
 				<div className='payments'>
 					<span>
 						<img
