@@ -8,6 +8,7 @@ header {
 	justify-content: space-between;
 	margin: 0 24px;
 	padding: 17px 16px;
+	position: relative;
 }
 
 h1 {
@@ -69,4 +70,26 @@ header img {
 header p {
 	font-size: 12px;
 	color: #000;
+}
+
+.wishlistCounter {
+	position: absolute;
+	right: 217px;
+	background-color: #006bff;
+	border-radius: 50%;
+	padding: 1px 5px;
+	color: white;
+	font-size: 12px;
+	top: 20px;
+}
+
+.karzina-counter {
+	position: absolute;
+	right: 300px;
+	background-color: #006bff;
+	border-radius: 50%;
+	padding: 1px 5px;
+	color: white;
+	font-size: 12px;
+	top: 20px;
 }

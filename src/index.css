@@ -13,3 +13,24 @@ body {
 	max-width: 1440px;
 	margin: 0 auto;
 }
+
+.wishToHome {
+	border: none;
+	padding: 8px 40px;
+	border-radius: 10px;
+	background-color: #006bff;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	margin-left: 48%;
+}
+
+.wishToHome a {
+	text-decoration: none;
+	color: white;
+	font-size: 14px;
+}
+
+.wishToHome:hover {
+	background-color: #092dd3;
+	transition: all 0.3s ease;
+}
