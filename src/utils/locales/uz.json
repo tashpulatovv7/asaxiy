@@ -34,5 +34,17 @@
 	"yetkazish1": "Bizning do'konlar",
 	"yetkazish2": "Olib ketish punktlari",
 	"yetkazish3": "Yetkazib berish",
-	"tolovTuri": "To'lov turlari"
+	"tolovTuri": "To'lov turlari",
+	"haridQilish": "Hoziroq harid qilish",
+	"tel": "Telefon",
+	"fio": "F.I.O",
+	"viloyat": "Viloyat",
+	"shahar": "Shahar/Tuman",
+	"punkti": "Aholi punkti",
+	"manzil": "Manzil",
+	"moljal": "Mo'ljal",
+	"ishJoyi": "Ish joyingiz manzili",
+	"buyurtmaIzohi": "Buyurtma izohi",
+	"promokod": "Promo-kod bormi?",
+	"zakazQilish": "Buyurtma qilish"
 }

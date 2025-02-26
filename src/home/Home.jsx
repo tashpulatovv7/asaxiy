@@ -136,7 +136,7 @@ const Home = () => {
 										to={`/product/${product.id}`}
 										className='home-btn'
 									>
-										Hoziroq harid qilish
+										{t('haridQilish')}
 									</Link>
 
 									<button

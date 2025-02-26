@@ -32,58 +32,14 @@ const Basket = () => {
 				{filteredProducts?.length > 0 ? (
 					basket?.map(product => (
 						<li className='card' key={product.id}>
-							<img
-								className='card-img'
-								src={product.thumbnail}
-								alt={product.title}
-							/>
-							<div className='card-content'>
-								<button
-									className='heartBtn'
-									onClick={e => {
-										e.stopPropagation();
-										addBasket(product);
-									}}
-								>
-									<img
-										className='heart'
-										src='https://asaxiy.uz/custom-assets/images/icons/heart.svg'
-										alt=''
-									/>
-								</button>
-
+							<div className='basketPage'>
 								<img
-									className='taqqoslash-icon'
-									src='https://asaxiy.uz/custom-assets/images/icons/compare_gray.svg'
-									alt=''
+									className='card-img'
+									src={product.thumbnail}
+									alt={product.title}
 								/>
 
 								<b>{product.title}</b>
-
-								<Rating
-									name='read-only'
-									className='rating'
-									value={product.rating}
-									readOnly
-								/>
-
-								<p>Price: {product.price}$</p>
-
-								<div className='haridQilish-karzina'>
-									<Link
-										to={`/product/${product.id}`}
-										className='home-btn'
-									>
-										Hoziroq harid qilish
-									</Link>
-
-									<button className='karzina'>
-										<img
-											src='https://asaxiy.uz/custom-assets/images/icons/cart-single.svg'
-											alt=''
-										/>
-									</button>
-								</div>
 							</div>
 						</li>
 					))
