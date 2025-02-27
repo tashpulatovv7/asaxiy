@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const CheckoutForm = () => {
+const Checkout = () => {
 	const [formData, setFormData] = useState({
 		phone: '',
 		fullName: '',
@@ -121,11 +121,15 @@ const CheckoutForm = () => {
 				/>
 			</div>
 
-			<div className='mt-4'>
+			<div className='mt-4 CheckoutBtn'>
 				<button className='btn btn-primary'>{t('zakazQilish')}</button>
+				<button className='btn btn-primary '>
+					{' '}
+					<a href='/'>Asosiy sahifaga</a>
+				</button>
 			</div>
 		</div>
 	);
 };
 
-export default CheckoutForm;
+export default Checkout;

@@ -59,7 +59,7 @@ const Header = () => {
 						alt=''
 					/>
 					<p>{t('savat')}</p>
-					{/* <div className='basketCounter'>{basket.length}</div> */}
+					<div className='basketCounter'>{basket.length}</div>
 				</div>
 			</NavLink>
 
@@ -92,7 +92,7 @@ const Header = () => {
 				<Button onClick={() => setShowModal(true)}>{t('kirish')}</Button>
 				<AuthModal show={showModal} handleClose={() => setShowModal(false)} />
 			</div>
-			<h6 className='karzina-counter'>0</h6>
+			{/* <h6 className='karzina-counter'>0</h6> */}
 		</header>
 	);
 };

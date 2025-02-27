@@ -13,8 +13,7 @@ const Home = () => {
 	const [searchTerm, setSearchTerm] = useState('');
 	const [sortBy, setSortBy] = useState('');
 	const [sortOrder, setSortOrder] = useState('');
-	const { setWishlist, wishlist } = useStateValue();
-	const { basket, setBasket } = useStateValue();
+	const { setWishlist, wishlist, basket, setBasket } = useStateValue();
 	const { t, i18n } = useTranslation();
 
 	useEffect(() => {

@@ -1,12 +1,14 @@
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { memo, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import './detail.css';
 
 const Details = () => {
 	const { id } = useParams();
 	const [product, setProduct] = useState(null);
+	const { t, i18n } = useTranslation();
 
 	useEffect(() => {
 		axios.get(`https://dummyjson.com/products/${id}`)
@@ -41,7 +43,7 @@ const Details = () => {
 					<button>Harid qilish</button>
 
 					<button>
-						<a href='/'>Orqaga</a>
+						<a href='/'>{t('gohome')}</a>
 					</button>
 				</div>
 			</div>

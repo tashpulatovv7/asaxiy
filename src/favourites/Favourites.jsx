@@ -1,6 +1,7 @@
 import { Rating } from '@mui/material';
 import axios from 'axios';
 import { memo, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../context';
 
@@ -8,6 +9,7 @@ const Favourites = () => {
 	const [products, setProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);
 	const { wishlist, setWishlist } = useStateValue();
+	const { t, i18n } = useTranslation();
 
 	useEffect(() => {
 		axios.get('https://dummyjson.com/products')
@@ -94,7 +96,7 @@ const Favourites = () => {
 				)}
 			</ul>
 			<button className='wishToHome'>
-				<a href='/'>Orqaga</a>
+				<a href='/'>{t('gohome')}</a>
 			</button>
 		</>
 	);
